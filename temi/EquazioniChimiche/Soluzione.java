@@ -19,8 +19,9 @@ public class Soluzione {
 
         TavolaPeriodica tavolaPeriodica = new TavolaPeriodica(elems);
         try {
-            Molecola molecola = new Molecola(args[0], tavolaPeriodica);
-            System.out.println(molecola.toString());
+            // Molecola molecola = new Molecola(args[0], tavolaPeriodica);
+            EquazioneChimica equazioneChimica = new EquazioneChimica(args[0], tavolaPeriodica);
+            System.out.println(equazioneChimica.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -76,7 +76,7 @@ public class Molecola {
         for (String elem : priority) {
             if (nonPriority.containsKey(tavolaPeriodica.prendiElemento(elem))) {
                 ElementoChimico e = tavolaPeriodica.prendiElemento(elem);
-                prioriyItems.put(e, prioriyItems.get(e));
+                prioriyItems.put(e, nonPriority.get(e));
                 nonPriority.remove(e);
             }
         }
