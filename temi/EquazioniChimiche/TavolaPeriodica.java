@@ -11,7 +11,7 @@ import java.util.Objects;
  */
 public class TavolaPeriodica implements Iterable<ElementoChimico> {
     private static final int TOTALE_ELEMENTI = 118;
-    private final ElementoChimico[] tavola = new ElementoChimico[TOTALE_ELEMENTI + 1];;
+    private ElementoChimico[] tavola = new ElementoChimico[TOTALE_ELEMENTI + 1];;
 
     /**
      * AF: gli elementi sono rappresentati da da degli {@code ElementoChimico} presi
@@ -50,7 +50,7 @@ public class TavolaPeriodica implements Iterable<ElementoChimico> {
         }
         for (ElementoChimico elementoChimico : elems) {
             int i = elementoChimico.nAtomico();
-            this.tavola[i] = new ElementoChimico(elementoChimico);
+            this.tavola[i - 1] = new ElementoChimico(elementoChimico);
         }
     }
 
@@ -89,9 +89,9 @@ public class TavolaPeriodica implements Iterable<ElementoChimico> {
         if (simbolo.length() == 0)
             throw new IllegalArgumentException("Il simbolo non può essere null");
 
-        for (ElementoChimico elementoChimico : this.tavola) {
-            if (elementoChimico.Simbolo().equals(simbolo))
-                return elementoChimico;
+        for (ElementoChimico e : tavola) {
+            if (e.Simbolo().equals(simbolo))
+                return e;
         }
         throw new NoSuchElementException("Il simbolo non è presente");
     }

@@ -82,6 +82,6 @@ public class ElementoChimico implements Comparable<ElementoChimico> {
 
     @Override
     public String toString() {
-        return "Simbolo " + simbolo + "nome " + nome;
+        return "Simbolo " + simbolo + " nome " + nome;
     }
 }

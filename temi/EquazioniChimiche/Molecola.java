@@ -1,6 +1,4 @@
 
-
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -52,6 +50,7 @@ public class Molecola {
         String elems[] = Helpers.parseFormula(formula);
         for (int i = 0; i < elems.length; i++) {
             ElementoChimico e = this.tavolaPeriodica.prendiElemento(elems[i]);
+
             if (elementi.containsKey(e)) {
                 elementi.put(e, elementi.get(e) + Integer.parseInt(elems[1]));
             } else {
@@ -104,9 +103,9 @@ public class Molecola {
         StringBuilder sb = new StringBuilder();
         sb.append(formula());
 
-        sb.append(',');
+        sb.append(", ");
         sb.append(PesoTotale());
-        sb.append(',');
+        sb.append(", ");
 
         if (elementi.keySet().size() == 1)
             sb.append("semplice");
